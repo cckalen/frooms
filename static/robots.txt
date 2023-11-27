@@ -1,0 +1,10 @@
+ 
+User-agent: *
+
+Disallow: /*.js$
+Disallow: /*.json
+Disallow: /mediaserver
+
+Disallow: /config
+
+ Sitemap: https://ss.com/sitemap.xml
