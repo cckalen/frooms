@@ -1,0 +1,47 @@
+.casemaindivoooo {
+    background-image: url('https://s3-eu-west-1.amazonaws.com/images.linnlive.com/46f002540b02bbcc49ff64da6bbb6eee/73519136-5f44-4c80-973f-2e49765c9d71.jpg');
+    background-size: contain;
+}
+
+.app-bar {
+    background: none;
+}
+
+.blurxsmall {
+    filter: blur(1px);
+}
+
+.static-blend-pink-yellow-dark img {
+    mix-blend-mode: darken;
+    /* from [class*="-dark"] img */
+}
+
+.static-blend-pink-yellow-dark {
+    position: relative;
+    /* Necessary for absolute positioning of pseudo-elements */
+    background: linear-gradient(to bottom right, #FAA6FB, #FBBC05);
+    /* from [class*="-pink-yellow"] */
+}
+
+.static-blend-pink-yellow-dark:before {
+    position: absolute;
+    z-index: 3;
+    background: rgba(0, 0, 0, 0.4);
+    color: #fff;
+    padding: 0.2em;
+    font-size: 14px;
+}
+
+.static-blend-pink-yellow-dark:after {
+    display: block;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    -webkit-filter: contrast(2.3);
+    filter: contrast(1.3);
+    mix-blend-mode: lighten !important;
+    /* from [class*="-dark"]:after */
+}

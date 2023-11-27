@@ -1,0 +1,9 @@
+{
+    "redirects": [
+        {
+            "source": "/",
+            "destination": "/post/find-someone-by-photo",
+            "permanent": false
+        }
+    ]
+}

@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind variants;
+
+@layer utilities {
+  .spreadShadow {
+box-shadow:
+    5px 5px 5px rgba(232, 221, 228, 0.5),
+    10px 10px 5px rgba(104, 28, 74, 0.5),
+    15px 15px 5px rgba(225, 210, 219, 0.5),
+    -5px 5px 5px rgba(28, 17, 80, 0.5),
+    -10px 10px 5px rgba(217, 198, 210, 0.5),
+    -15px 15px 5px rgba(149, 96, 128, 0.5),
+    5px -5px 5px rgba(195, 164, 183, 0.5),
+    10px -10px 5px rgba(62, 17, 44, 0.5),
+    -5px -5px 5px rgba(225, 219, 217, 0.5),
+    -10px -10px 5px rgba(232, 221, 228, 0.5);
+
+  }
+
+    .spreadShadowTight {
+box-shadow:
+    1px 1px 2px rgba(232, 221, 228, 0.5),
+    3px 3px 2px rgba(104, 28, 74, 0.3),
+    -1px 1px 2px rgba(28, 17, 80, 0.3),
+    -3px 3px 2px rgba(217, 198, 210, 0.5),
+    1px -1px 2px rgba(195, 164, 183, 0.3),
+    -1px -1px 2px rgba(225, 219, 217, 0.3);
+
+  }
+}
+
+.gradient-heading-logo  {
+	@apply bg-clip-text text-transparent box-decoration-clone;
+	/* Direction */
+	@apply bg-gradient-to-br;
+	/* Color Stops */
+	@apply from-primary-500 via-primary-500 to-secondary-500;
+} 
+
+.dropzone {
+	@apply backdrop-blur-lg;
+	background:none;
+	@apply my-6
+}
+.gradient-heading {
+	@apply bg-clip-text text-transparent box-decoration-clone;
+	/* Direction */
+	@apply bg-gradient-to-br;
+	/* Color Stops */
+	@apply from-secondary-500 via-secondary-500 to-primary-500;
+} 
+
+
+html,
+body {
+	@apply h-full overflow-hidden;
+	@apply scroll-smooth;
+}
+h4{
+	@apply text-xl;
+	@apply mb-2;
+	@apply mt-2;
+	@apply h4;
+}
+
+h3{
+	@apply text-2xl;
+	@apply mb-2;
+	@apply mt-2;
+	@apply h3;
+}
+
+h2{
+	@apply text-3xl;
+	@apply mb-2;
+	@apply mt-2;
+	@apply h2;
+}
+
+h1{
+	@apply text-4xl;
+	@apply mb-3;
+	@apply mt-3;
+	@apply h1;
+}
+ 
+
+.hBig{
+	@apply text-4xl;
+	@apply mb-3;
+	@apply mt-3;  
+	font-weight:bold; 
+}
+
+.h1{
+	font-family: 'Bellota';
+}
+.h2{
+	font-family: 'Bellota';
+}
+
+.dark body{
+@apply bg-surface-700;
+}
+
+
+
+@font-face {
+	/* Reference name */
+	font-family: 'Hubballi';
+	font-weight: 400; 
+	src: url('/fonts/Hubballi-Regular.ttf');
+}
+@font-face { 
+	font-family: 'Bellota';
+	font-weight: 400; 
+	src: url('/fonts/Bellota-Regular.ttf');
+}
+@font-face { 
+	font-family: 'Bellota';
+	font-weight: 600; 
+	src: url('/fonts/Bellota-Bold.ttf');
+}
+@font-face { 
+	font-family: 'Bellota';
+	font-weight: 800; 
+	src: url('/fonts/Bellota-Bold.ttf');
+} 
