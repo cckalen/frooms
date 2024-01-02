@@ -1,64 +1,14 @@
 <!--routes/+page.svelte-->
 <script lang="ts">
-  import SEOTags from "$lib/SEOTags.svelte";
   import {
     ProgressBar,
     getToastStore,
     type ToastSettings,
   } from "@skeletonlabs/skeleton";
-  import Draggable from "$lib/Draggable.svelte";
-  import { isProcessing, showResultsGrid, hideTopBar } from "$lib/store";
   const toastStore = getToastStore();
-  let results: any[] = [];
-  let uploadComplete = false;
-  let camResults: any[] = [];
-
-  $: if (uploadComplete) {
-    $hideTopBar = false;
-    setTimeout(() => {
-      $isProcessing = false;
-      $showResultsGrid = true;
-    }, 8000);
-  }
-
-  function handleCamResults(event: CustomEvent) {
-    const newResults = event.detail;
-    if (Array.isArray(newResults) && newResults.length > 0) {
-      camResults = newResults;
-      uploadComplete = true;
-    } else {
-      const t: ToastSettings = {
-        message: "Problem with the results list...",
-        autohide: false,
-        background: "variant-filled-error",
-      };
-      toastStore.trigger(t);
-      console.error("Received data is not a non-empty array");
-    }
-  }
-
-  function handleResults(event: CustomEvent) {
-    const newResults = event.detail;
-    if (Array.isArray(newResults) && newResults.length > 0) {
-      results = newResults;
-    } else {
-      const t: ToastSettings = {
-        message: "Problem with the results list...",
-        autohide: false,
-        background: "variant-filled-error",
-      };
-      toastStore.trigger(t);
-      console.error("Received data is not a non-empty array ");
-    }
-  }
 </script>
 
-<SEOTags />
-
-ss
-<Draggable left={50} top={200}>
-  <h1>Drag Me</h1>
-</Draggable>
+Home
 
 <style lang="postcss">
   .img-bg {

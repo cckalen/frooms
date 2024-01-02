@@ -12,17 +12,13 @@
   import { hideTopBar } from "$lib/store";
   import Footer from "$lib/Footer.svelte";
   import type { AfterNavigate } from "@sveltejs/kit";
-  import { dev } from "$app/environment";
-  import { inject } from "@vercel/analytics";
-
-  inject({ mode: dev ? "development" : "production" });
 
   initializeStores();
-  let pageRoute = $page.route.id || "";
-  let isOnPostPage = pageRoute.trim() === "/";
-  if (isOnPostPage) {
-    $hideTopBar = true;
-  }
+  // let pageRoute = $page.route.id || "";
+  // let isOnPostPage = pageRoute.trim() === "/";
+  // if (isOnPostPage) {
+  //   $hideTopBar = true;
+  // }
 
   onNavigate((navigation) => {
     if (!document.startViewTransition) return;
@@ -46,20 +42,18 @@
 
 <Toast />
 <!-- App Shell -->
+<!-- svelte-ignore a11y-missing-attribute -->
 <AppShell>
   <svelte:fragment slot="header">
     <!-- App Bar -->
     <div
       class:off-screen={$hideTopBar}
-      class="headerdiv bg-secondary-500 transition-all duration-500 ease-in"
+      class="headerdiv bg-[#FAEBE0] transition-all duration-500 ease-in"
     >
       <AppBar>
         <svelte:fragment slot="lead">
-          <Icon
-            icon="simple-icons:circle"
-            class="min-h-[35px] min-w-[35px]  mr-1"
-          />
-          <strong class="text-xl h3">Frooms</strong>
+          <img src="images/froomsLogo1.png" width="40" class="drop-shadow-lg" />
+          <strong class="text-xl ml-2 h3 text-primary-700">Frooms</strong>
         </svelte:fragment>
         <svelte:fragment slot="trail">
           <a class="btn btn-sm variant-filled-primary" href="/" target="_blank">
@@ -99,7 +93,7 @@
   </svelte:fragment>
   <!-- Page Route Content -->
   <slot />
-  <svelte:fragment slot="pageFooter"><Footer /></svelte:fragment>
+  <!-- <svelte:fragment slot="pageFooter"><Footer /></svelte:fragment> -->
 </AppShell>
 
 <style>

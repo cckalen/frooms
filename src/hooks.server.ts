@@ -38,7 +38,6 @@ export const handle: Handle = async ({ event, resolve }) => {
             event.cookies.delete('configadmin');
         }
         throw redirect(303, '/')
-
     }
 
 
